@@ -100,6 +100,25 @@
             background-size: cover;
             object-fit: cover;
         }
+        @media only screen and (max-width: 900px) {
+            .main-cont{
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-top: 300px;
+            }
+            .main-body
+            {
+              margin-top: 100px;
+              min-width: 100%;
+              font-size: medium;
+            }
+            .footer
+            {
+              margin-top: 100px;
+              font-size: 10px;
+            }
+          }
  
 
     </style>
@@ -120,7 +139,7 @@
 
   <body>
 
-    <!-- Navabar -->
+    <!-- Navbar -->
 
     <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark" style="width:100%">
      
@@ -150,8 +169,8 @@
       <!-- Main Body -->
 
     <br><br><br><br>
-      <div style="position: absolute;top: 10%;">
-      <p style="font-size: 270%;font-family: 'Montserrat', sans-serif;text-align: left;">STUDENT REGISTRATION</p>
+      <div class="heading" style="position: absolute;top: 10%;">
+      <p style="font-size: 250%;font-family: 'Montserrat', sans-serif;text-align: left;">STUDENT REGISTRATION</p>
       </div><br><br><br>
       <div class="main-cont">
           <div class="main-body">
@@ -227,7 +246,7 @@
       
       <!-- Footer -->
 
-      <div style="background-color:white;width:90%;">
+      <div class="footer" style="background-color:white;width:90%;">
         <footer class="d-flex  flex-wrap justify-content-between align-items-center py-3 my-4 border-top" style="z-index:2;" >
           <p class="col-md-4 mb-0 text-muted">&copy; 2023 Company, Inc</p>
            
