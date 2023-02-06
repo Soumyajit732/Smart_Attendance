@@ -72,6 +72,7 @@
             border-radius: 50px; 
            overflow: hidden; 
         }
+        
         #upload{
             display: none;
         }
@@ -82,6 +83,10 @@
             background-size: cover;
             object-fit: cover;
         }
+
+    .display{
+        display:none;
+    }
         @media only screen and (max-width: 1200px) {
             .main-cont{
                 flex-direction: column;
@@ -133,7 +138,7 @@
             }
         }
         @media only screen and (max-width: 300px){
-            .main-cont{
+          .main-cont{
                 margin-top:600px;
             }
             .heading
@@ -241,15 +246,23 @@
               <div class="main-body-cont">
                 <form style="height:100%;display:flex;flex-direction: column;gap:5%;">
         
-                    <div class="profile" style="display: flex;font-size: 20px;width:100%;">
-                      <div class="display"><img src="noprofil.jpg"></div>&emsp;
+                   <div class="profile" style="display: flex;font-size: 20px;width:100%;">
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    
+                  
+                  <!-- </label>&emsp;&emsp; -->
+
+                  <div class="profile" style="display: flex;font-size: 20px;width:100%;">
+                      
                     <input type="file"  id="upload" accept="image/png, image/jpg, image/jpeg">
                     <label style="cursor: pointer;border-radius: 10px;font-size:18px;" for="upload">
-                        <br><i class="fa-solid fa-cloud-arrow-up"></i>
-                        Choose Profile Photo
+                      <div  class="display"></div>&emsp;
+                      <i id="profile_pic" class="fa-solid fa-user-shield fa-4x"></i>
                     </label>&emsp;&emsp;
                     
                    </div>
+                  
+                 </div>
                     <div class="form-floating">
                       <input type="text" class="form-control" id="floatingInput" placeholder="Username">
                       <label  style="display:flex;align-items:center;gap:5%;" for="floatingInput"><i class="fa-solid fa-user"></i>Username</label>
@@ -292,7 +305,9 @@
       </div>
 
       <script>
-        const display = document.querySelector(".display");
+          const display = document.querySelector(".display");
+    const logo = document.querySelector("#profile_pic");
+
         const input = document.querySelector("#upload");
         let img = document.querySelector("img");
 
@@ -300,6 +315,8 @@
           let reader = new FileReader();
           reader.readAsDataURL(input.files[0]);
           reader.addEventListener("load", () => {
+            display.style.display='block';
+            logo.style.display='none';
             display.innerHTML = `<img src=${reader.result} alt=''/>`;
           });
         });
